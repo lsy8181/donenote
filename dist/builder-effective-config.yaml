@@ -1,0 +1,24 @@
+directories:
+  output: dist
+  buildResources: public
+files:
+  - filter:
+      - build/**/*
+      - build/**/*
+      - main.js
+extraMetadata:
+  main: build/electron.js
+appId: com.donote.app
+productName: Donenote
+extraResources:
+  - from: build
+    to: build
+win:
+  target: nsis
+  icon: public/icon.ico
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+extends: react-cra
+electronVersion: 35.2.1
